@@ -1,23 +1,8 @@
 import React, { useRef, useState } from 'react';
-import GUN from 'gun';
-import 'gun/sea';
-import 'gun/axe';
+import { user } from '../user';
 
-// Database
-const db = GUN();
-// Gun User
-const user = db.user().recall({sessionStorage: true});
-
-let username;
-let password;
-
-user.get('alias').on(v => username=v)
-
-db.on('auth', async(event) => {
-    const alias = await user.get('alias'); // username string
-    username = alias;
-    console.log(`signed in as ${alias}`);
-});
+let username = '';
+let password = '';
 
 function signup() {
     user.get('alias').put(username);
@@ -31,14 +16,12 @@ function signup() {
 }
 
 function login() {
-    console.log(username, password);
     user.auth(username, password, ({ err }) => console.log(err || 'signed in'));
 }
 
 function Login() {
-
     return (
-        <form className="form-group">
+        <div className="form-group">
           Username
           <input
             name="username"
@@ -60,7 +43,7 @@ function Login() {
           <button className="login" onClick={signup}>
             Sign Up
           </button>
-        </form>
+        </div>
     );
 
 }
