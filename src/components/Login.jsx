@@ -38,7 +38,7 @@ function login() {
 function Login() {
 
     return (
-        <form className="form-group">
+        <div className="form-group">
           Username
           <input
             name="username"
@@ -60,7 +60,7 @@ function Login() {
           <button className="login" onClick={signup}>
             Sign Up
           </button>
-        </form>
+        </div>
     );
 
 }
