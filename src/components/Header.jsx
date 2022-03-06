@@ -1,4 +1,5 @@
-import { user, username } from "../user";
+import React, { useEffect, useState } from 'react';
+import { user, getUsername } from "../user";
 
 function logout() {
   user.leave();
@@ -18,7 +19,14 @@ function delete_acc() {
 }
 
 function Header() {
+  const [username, setUsername] = useState('');
+
   if (user.is) {
+    useEffect(() => {
+      getUsername().then(username => {
+        setUsername(username);
+      })
+    }, []);
     return (
       <div className="navbar navbar-expand-lg navbar-light bg-light">
         <img

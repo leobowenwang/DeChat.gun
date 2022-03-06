@@ -1,8 +1,6 @@
-import { username } from '../user';
-
 function ChatMessage(props) {
     let message = props.message;
-    let sender = username;
+    let sender = props.username;
     const messageClass = message.who === sender ? 'sent' : 'received';
     const avatar = `https://avatars.dicebear.com/api/initials/${message.who}.svg`;
     const ts = new Date(message.when);

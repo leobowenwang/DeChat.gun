@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import GUN from 'gun';
-import { user, db, username } from '../user';
+import { user, db, getUsername } from '../user';
 import ChatMessage from './ChatMessage';
 import Login from './Login';
 // key for end-to-end encryption
@@ -10,6 +10,7 @@ const sea = require('gun/sea')
 function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
+  const [username, setUsername] = useState('');
 
   async function sendMessage() {
     const secret = await sea.encrypt(newMessage, key);
@@ -42,17 +43,19 @@ function Chat() {
           }
         });
   }
-
-  useEffect(() => {
-    loadMessages();
-  }, []);
   if (user.is) {
+    useEffect(() => {
+      loadMessages();
+      getUsername().then(username => {
+        setUsername(username);
+      })
+    }, []);
     return (
         <div className="App">
           <section>
               <main>
                 {messages.length!=0 ? messages.map((message, key) => (
-                  <ChatMessage key={key} message={message} user={user} />
+                  <ChatMessage key={key} message={message} username={username}/>
                 )) : null}
               </main>
               <input placeholder="Type a message..." onChange={e => setNewMessage(e.target.value)} maxLength="100" />
