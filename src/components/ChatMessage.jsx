@@ -1,9 +1,5 @@
 import '../index.css';
-
-async function getUser(user) {
-    let username = await user.get('alias');
-    return username;
-}
+import { username } from '../user';
 
 function ChatMessage(props) {
     let message = props.message;

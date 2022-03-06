@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import GUN from 'gun';
-import { user, db } from '../user';
+import { user, db, username } from '../user';
 import ChatMessage from './ChatMessage';
+import Login from './Login';
 // key for end-to-end encryption
 const key = require("../secrets.json");
 const sea = require('gun/sea')
@@ -32,8 +33,6 @@ function delete_acc() {
     }
   });
 }
-
-  
 
 function Chat() {
   const [messages, setMessages] = useState([]);
@@ -90,6 +89,7 @@ function Chat() {
         </div>
     );
   }
+  return (<Login/>)
 }
 
 export default Chat
