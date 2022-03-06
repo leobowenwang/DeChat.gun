@@ -3,13 +3,18 @@ import 'gun/sea';
 //import 'gun/axe';
 
 // Database
-export const db = GUN();
+export const db = GUN({
+    peers: [
+      'http://localhost:3030/gun'
+    ]
+})
 // Gun User
 export const user = db.user().recall({sessionStorage: true});
 
-export let username;
-
-user.get('alias').on(v => username=v)
+export async function getUsername() {
+    const alias = await user.get('alias');
+    return alias;
+}
 
 db.on('auth', async(event) => {
     const alias = await user.get('alias');

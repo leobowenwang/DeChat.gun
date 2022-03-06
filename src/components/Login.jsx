@@ -5,9 +5,6 @@ import { user } from '../user';
 let username = '';
 let password = '';
 
-var pair = window.sessionStorage.getItem('pair');
-console.log(pair)
-
 async function signup() {
   user.create(username, password, function(ack) {
     if (!ack.pub) {
