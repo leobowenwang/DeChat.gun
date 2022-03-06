@@ -6,7 +6,7 @@ import { user, username } from "../user";
 function Chat() {
   return (
     <div className="App">
-      <section>{user ? <ChatMessage /> : <Login />}</section>
+      <section>{username ?  <Login />: <ChatMessage />}</section>
     </div>
   );
 }
