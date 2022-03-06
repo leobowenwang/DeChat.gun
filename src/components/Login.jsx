@@ -56,10 +56,10 @@ function Login() {
           onChange={e => password=e.target.value}
           type="password"
         />
-        <button className="login" onClick={login}>
+        <button className="btn btn-primary" onClick={login}>
           Login
         </button>
-        <button className="signup" onClick={signup}>
+        <button className="btn btn-success" onClick={signup}>
           Sign Up
         </button>
       </div>
