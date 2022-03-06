@@ -38,10 +38,10 @@ function Header() {
           />
 
           <section>
-            <button className="login" onClick={logout}>
+            <button className="btn btn-warning" onClick={logout}>
               Logout
             </button>
-            <button className="login" onClick={delete_acc}>
+            <button className="btn btn-danger" onClick={delete_acc}>
               Delete Account
             </button>
           </section>
