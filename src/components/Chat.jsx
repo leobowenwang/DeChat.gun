@@ -1,16 +1,16 @@
-import React, { useRef, useState, useEffect } from 'react';
-import GUN from 'gun';
-import { user, db, getUsername } from '../user';
-import ChatMessage from './ChatMessage';
-import Login from './Login';
+import React, { useRef, useState, useEffect } from "react";
+import GUN from "gun";
+import { user, db, getUsername } from "../user";
+import ChatMessage from "./ChatMessage";
+import Login from "./Login";
 // key for end-to-end encryption
 const key = require("../secrets.json");
 const sea = require("gun/sea");
 
 function Chat() {
   const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
-  const [username, setUsername] = useState('');
+  const [newMessage, setNewMessage] = useState("");
+  const [username, setUsername] = useState("");
 
   async function sendMessage() {
     const secret = await sea.encrypt(newMessage, key);
@@ -50,38 +50,36 @@ function Chat() {
   if (user.is) {
     useEffect(() => {
       loadMessages();
-      getUsername().then(username => {
+      getUsername().then((username) => {
         setUsername(username);
-      })
+      });
     }, []);
     return (
       <div className="App">
-        <div className="padding">
-          <div className="row container d-flex justify-content-center">
-            <div className="col-md-6">
-              <main>
-                {messages.length!=0 ? messages.map((message, key) => (
-                  <ChatMessage key={key} message={message} username={username}/>
-                )) : null}
-              </main>
-            </div>
-            <div class="input-group fixed-bottom mb-3">
-              <input
-                placeholder="Type a message..."
-                className="form-control"
-                onChange={(e) => setNewMessage(e.target.value)}
-                maxLength="100"
-              />
-              <button
-                className="btn btn-primary"
-                disabled={newMessage === ""}
-                onClick={sendMessage}
-              >
-                Send
-              </button>
-            </div>
-          </div>
+        <div className="container card" >
+          {messages.length != 0
+            ? messages.map((message, key) => (
+                <ChatMessage key={key} message={message} username={username} />
+              ))
+            : null}
+
+          
         </div>
+        <div className="input-group fixed-bottom mb-3">
+            <input
+              placeholder="Type a message..."
+              className="form-control"
+              onChange={(e) => setNewMessage(e.target.value)}
+              maxLength="100"
+            />
+            <button
+              className="btn btn-primary"
+              disabled={newMessage === ""}
+              onClick={sendMessage}
+            >
+              Send
+            </button>
+          </div>
       </div>
     );
   }

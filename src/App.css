@@ -28,6 +28,15 @@
   color: #61dafb;
 }
 
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 #logo {
   width: 10rem;
 }
@@ -49,18 +58,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#container
+{
+  width:80%;
+  margin-left:10%;
 }
-
-
 
 .message {
   border: 2px solid #dedede;
@@ -70,6 +75,15 @@ body {
   margin: 10px 0;
 }
 
+.message-text-sent{
+  text-align: right;
+  margin-right: 3%;
+}
+
+.message-text-received{
+  text-align: left;
+  margin-left: 3%;
+}
 .message::after {
   content: "";
   clear: both;
@@ -77,8 +91,8 @@ body {
 }
 
 .received {
-  background-color: #00ACE3;
-  color: #fff
+  background-color: #ddd;
+  border-color: #ccc;
 }
 
 
@@ -89,7 +103,6 @@ body {
 
 .time-received {
   float: right;
-  color: white;
 }
 
 .sent {
@@ -104,5 +117,4 @@ body {
 
 .time-sent {
   float: left;
-
 }

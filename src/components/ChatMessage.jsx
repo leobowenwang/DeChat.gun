@@ -8,7 +8,7 @@ function ChatMessage(props) {
   return (
       <div className={`message ${messageClass}`}>
         <img className={`avatar avatar-${messageClass}`} src={avatar} alt="avatar" />
-        <div className="message-text">
+        <div className={`message-text-${messageClass}`}>
           <p>{message.what}</p>
           <time className={`time-${messageClass}`}>{ts.toLocaleTimeString()}</time>
         </div>
