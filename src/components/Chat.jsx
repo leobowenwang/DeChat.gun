@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import GUN from 'gun';
 import { user, db, username } from '../user';
 import ChatMessage from './ChatMessage';
@@ -7,19 +7,17 @@ import Login from './Login';
 const key = require("../secrets.json");
 const sea = require('gun/sea')
 
-let newMessage = '';
-
-async function sendMessage() {
-  const secret = await sea.encrypt(newMessage, key);
-  const message = user.get('all').set({ what: secret });
-  const index = new Date().toISOString();
-  db.get('chat').get(index).put(message);
-  newMessage = '';
-}
-
 function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
+
+  async function sendMessage() {
+    const secret = await sea.encrypt(newMessage, key);
+    const message = user.get('all').set({ what: secret });
+    const index = new Date().toISOString();
+    db.get('chat').get(index).put(message);
+    setNewMessage('');
+  }
 
   async function loadMessages() {
     var match = {
@@ -39,13 +37,15 @@ function Chat() {
               when: GUN.state.is(data, 'what'), // get the internal timestamp for the what property.
             };
             if (message.what) {
-              setMessages([...messages.slice(-100), message].sort((a, b) => a.when - b.when))
-              console.log(messages)
+              setMessages(prevState => [...prevState.slice(-100), message].sort((a, b) => a.when - b.when));
             }
           }
         });
   }
-  loadMessages();
+
+  useEffect(() => {
+    loadMessages();
+  }, []);
   if (user.is) {
     return (
         <div className="App">
