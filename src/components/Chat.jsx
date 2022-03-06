@@ -56,30 +56,28 @@ function Chat() {
     }, []);
     return (
       <div className="App">
-        <div className="container card" >
+        <div className="container card">
           {messages.length != 0
             ? messages.map((message, key) => (
                 <ChatMessage key={key} message={message} username={username} />
               ))
             : null}
-
-          
         </div>
         <div className="input-group fixed-bottom mb-3">
-            <input
-              placeholder="Type a message..."
-              className="form-control"
-              onChange={(e) => setNewMessage(e.target.value)}
-              maxLength="100"
-            />
-            <button
-              className="btn btn-primary"
-              disabled={newMessage === ""}
-              onClick={sendMessage}
-            >
-              Send
-            </button>
-          </div>
+          <input
+            placeholder="Type a message..."
+            className="form-control"
+            onChange={(e) => setNewMessage(e.target.value)}
+            maxLength="100"
+          />
+          <button
+            className="btn btn-primary"
+            disabled={newMessage === ""}
+            onClick={sendMessage}
+          >
+            Send
+          </button>
+        </div>
       </div>
     );
   }

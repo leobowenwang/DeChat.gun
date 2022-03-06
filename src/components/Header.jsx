@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { user, getUsername } from "../user";
 
-var pair = window.sessionStorage.getItem('pair');
-console.log(pair)
+var pair = window.sessionStorage.getItem("pair");
+console.log(pair);
 
 async function resetUsername() {
-  await user.get('alias').put(null);
+  await user.get("alias").put(null);
   return true;
 }
 
@@ -26,18 +26,18 @@ function delete_acc() {
     }
   });*/
   resetUsername().then((e) => {
-    console.log
-  })
+    console.log;
+  });
 }
 
 function Header() {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("");
 
   if (user.is) {
     useEffect(() => {
-      getUsername().then(username => {
+      getUsername().then((username) => {
         setUsername(username);
-      })
+      });
     }, []);
     return (
       <div className="navbar navbar-expand-lg navbar-light bg-light">
@@ -55,7 +55,7 @@ function Header() {
           className="avatar"
           alt="avatar"
         />
-        
+
         <div className="form-inline">
           <button className="btn btn-danger" onClick={delete_acc}>
             Delete Account

@@ -58,13 +58,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
-#container
-{
-  width:80%;
-  margin-left:10%;
+#container {
+  width: 80%;
+  margin-left: 10%;
 }
 
 .message {
@@ -75,12 +73,12 @@ body {
   margin: 10px 0;
 }
 
-.message-text-sent{
+.message-text-sent {
   text-align: right;
   margin-right: 3%;
 }
 
-.message-text-received{
+.message-text-received {
   text-align: left;
   margin-left: 3%;
 }
@@ -94,7 +92,6 @@ body {
   background-color: #ddd;
   border-color: #ccc;
 }
-
 
 .avatar-received {
   float: left;
