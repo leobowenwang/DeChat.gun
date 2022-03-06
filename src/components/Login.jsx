@@ -38,6 +38,7 @@ function Login() {
       </div>
     );
   }
+  
   return (
       <div className="App">
         Username
@@ -58,7 +59,7 @@ function Login() {
         <button className="login" onClick={login}>
           Login
         </button>
-        <button className="login" onClick={signup}>
+        <button className="signup" onClick={signup}>
           Sign Up
         </button>
       </div>

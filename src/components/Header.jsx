@@ -1,16 +1,33 @@
 import { user, username } from "../user";
 
-function signout() {
+function logout() {
   user.leave();
-  username.set("");
+  console.log("signed out.");
+  window.location.reload();
+}
+
+function delete_acc() {
+  user.delete(username, password, ({ err }) => {
+    if (err) {
+      alert(err);
+    } else {
+      console.log("account deleted.");
+      //window.location.reload();
+    }
+  });
 }
 
 function Header() {
-  return (
-    <div className="navbar navbar-expand-lg navbar-light bg-light">
-      <img src={`logo.png`} id="logo" className="img-fluid" alt="DeChat.gun" />
+  if (user.is) {
+    return (
+      <div className="navbar navbar-expand-lg navbar-light bg-light">
+        <img
+          src={`logo.png`}
+          id="logo"
+          className="img-fluid"
+          alt="DeChat.gun"
+        />
 
-      {username ? (
         <div className="user-bio">
           <span>
             Hello <strong>{username}</strong>
@@ -20,15 +37,25 @@ function Header() {
             alt="avatar"
           />
 
-          <button className="signout-button" onClick={signout}>
-            Sign Out
-          </button>
+          <section>
+            <button className="login" onClick={logout}>
+              Logout
+            </button>
+            <button className="login" onClick={delete_acc}>
+              Delete Account
+            </button>
+          </section>
         </div>
-      ) : (
-        <div className="user-bio">
-          <h3 className="text-center">DeChat.gun</h3>
-        </div>
-      )}
+      </div>
+    );
+  }
+  return (
+    <div className="navbar navbar-expand-lg navbar-light bg-light">
+      <img src={`logo.png`} id="logo" className="img-fluid" alt="DeChat.gun" />
+
+      <div className="user-bio">
+        <h3 className="text-center">DeChat.gun</h3>
+      </div>
     </div>
   );
 }

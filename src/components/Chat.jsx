@@ -17,23 +17,6 @@ async function sendMessage() {
   newMessage = '';
 }
 
-function logout() {
-  user.leave();
-  console.log('signed out.');
-  window.location.reload();
-}
-
-function delete_acc() {
-  user.delete(username, password, ({ err }) => {
-    if (err) {
-      alert(err);
-    } else {
-      console.log('account deleted.');
-      //window.location.reload();
-    }
-  });
-}
-
 function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -66,17 +49,6 @@ function Chat() {
   if (user.is) {
     return (
         <div className="App">
-          <header>
-            <h1>🔥💬</h1>
-          </header>
-          <section>
-            <button className="login" onClick={logout}>
-              Logout
-            </button>
-            <button className="login" onClick={delete_acc}>
-              Delete Account
-            </button>
-          </section>
           <section>
               <main>
                 {messages.length!=0 ? messages.map((message, key) => (
