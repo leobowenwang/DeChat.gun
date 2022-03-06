@@ -59,3 +59,50 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
+
+.message {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.message::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.received {
+  background-color: #00ACE3;
+  color: #fff
+}
+
+
+.avatar-received {
+  float: left;
+  margin-right: 20px;
+}
+
+.time-received {
+  float: right;
+  color: white;
+}
+
+.sent {
+  border-color: #ccc;
+  background-color: #f5f6f7;
+}
+
+.avatar-sent {
+  float: right;
+  margin-left: 20px;
+}
+
+.time-sent {
+  float: left;
+
+}

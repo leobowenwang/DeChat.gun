@@ -8,15 +8,13 @@ function ChatMessage(props) {
   const ts = new Date(message.when);
 
   return (
-    <div className="card">
       <div className={`message ${messageClass}`}>
-        <img className="avatar" src={avatar} alt="avatar" />
+        <img className={`avatar avatar-${messageClass}`} src={avatar} alt="avatar" />
         <div className="message-text">
           <p>{message.what}</p>
-          <time>{ts.toLocaleTimeString()}</time>
+          <time className={`time-${messageClass}`}>{ts.toLocaleTimeString()}</time>
         </div>
       </div>
-    </div>
   );
 }
 

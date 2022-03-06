@@ -53,9 +53,9 @@ function Chat() {
   if (user.is) {
     return (
       <div className="App">
-        <div class="padding">
-          <div class="row container d-flex justify-content-center">
-            <div class="col-md-6">
+        <div className="padding">
+          <div className="row container d-flex justify-content-center">
+            <div className="col-md-6">
               <main>
                 {messages.length != 0
                   ? messages.map((message, key) => (
@@ -64,14 +64,18 @@ function Chat() {
                   : null}
               </main>
             </div>
-            <div class="input-group">
+            <div class="input-group fixed-bottom mb-3">
               <input
                 placeholder="Type a message..."
                 className="form-control"
                 onChange={(e) => setNewMessage(e.target.value)}
                 maxLength="100"
               />
-              <button className="btn btn-primary" disabled={newMessage === ""} onClick={sendMessage}>
+              <button
+                className="btn btn-primary"
+                disabled={newMessage === ""}
+                onClick={sendMessage}
+              >
                 Send
               </button>
             </div>
