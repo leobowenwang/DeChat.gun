@@ -1,4 +1,3 @@
-import '../index.css';
 import { username } from '../user';
 
 function ChatMessage(props) {

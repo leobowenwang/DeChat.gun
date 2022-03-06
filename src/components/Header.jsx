@@ -27,24 +27,22 @@ function Header() {
           className="img-fluid"
           alt="DeChat.gun"
         />
-
-        <div className="user-bio">
-          <span>
-            Hello <strong>{username}</strong>
-          </span>
-          <img
-            src={`https://avatars.dicebear.com/api/initials/${username}.svg`}
-            alt="avatar"
-          />
-
-          <section>
-            <button className="btn btn-warning" onClick={logout}>
-              Logout
-            </button>
-            <button className="btn btn-danger" onClick={delete_acc}>
-              Delete Account
-            </button>
-          </section>
+        <span>
+          Welcome <strong>{username}</strong>
+        </span>
+        <img
+          src={`https://avatars.dicebear.com/api/initials/${username}.svg`}
+          className="avatar"
+          alt="avatar"
+        />
+        
+        <div class="form-inline">
+          <button className="btn btn-danger" onClick={delete_acc}>
+            Delete Account
+          </button>
+          <button className="btn btn-warning" onClick={logout}>
+            Logout
+          </button>
         </div>
       </div>
     );
