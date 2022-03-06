@@ -7,7 +7,7 @@ export const db = GUN();
 // Gun User
 export const user = db.user().recall({sessionStorage: true});
 
-let username;
+export let username;
 
 user.get('alias').on(v => username=v)
 
