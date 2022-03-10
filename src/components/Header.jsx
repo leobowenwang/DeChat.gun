@@ -49,19 +49,22 @@ function Header() {
           className="img-fluid"
           alt="DeChat.gun"
         />
-        <span>
-          Welcome <strong>{username}</strong>
-        </span>
-        <img
-          src={`https://avatars.dicebear.com/api/initials/${username}.svg`}
-          className="avatar"
-          alt="avatar"
-        />
 
+        <div className="mx-auto order-0">
+          <span>
+            Welcome <strong>{username}</strong> &nbsp;
+          </span>
+          <img
+            src={`https://avatars.dicebear.com/api/initials/${username}.svg`}
+            className="avatar"
+            alt="avatar"
+          />
+        </div>
         <div className="form-inline">
           <button className="btn btn-danger" onClick={delete_acc}>
-            Delete Account
+            Delete
           </button>
+          &nbsp;
           <button className="btn btn-warning" onClick={logout}>
             Logout
           </button>
@@ -72,10 +75,27 @@ function Header() {
   return (
     <div className="navbar navbar-expand-lg navbar-light bg-light">
       <img src={`logo.png`} id="logo" className="img-fluid" alt="DeChat.gun" />
-
-      <div className="user-bio">
-        <h3 className="text-center">DeChat.gun</h3>
-      </div>
+      <ul class="navbar-nav ms-auto">
+        <span class="text-muted">
+          by&nbsp;
+          <a
+            href="https://github.com/uknow4real"
+            target="_blank"
+            className="link-secondary"
+          >
+            Sebastian Chmel
+          </a>
+          &nbsp;&&nbsp;
+          <a
+            href="https://github.com/leobowenwang"
+            target="_blank"
+            className="link-secondary"
+          >
+            Leo Wang
+          </a>
+          &nbsp;
+        </span>
+      </ul>
     </div>
   );
 }
