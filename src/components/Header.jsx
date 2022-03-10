@@ -75,8 +75,8 @@ function Header() {
   return (
     <div className="navbar navbar-expand-lg navbar-light bg-light">
       <img src={`logo.png`} id="logo" className="img-fluid" alt="DeChat.gun" />
-      <ul class="navbar-nav ms-auto">
-        <span class="text-muted">
+      <ul className="navbar-nav ms-auto">
+        <span className="text-muted">
           by&nbsp;
           <a
             href="https://github.com/uknow4real"
