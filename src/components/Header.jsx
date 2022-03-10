@@ -12,11 +12,12 @@ async function resetUsername() {
 function logout() {
   user.leave();
   console.log("signed out.");
-  localStorage.clear();
   window.location.reload();
 }
 
 function delete_acc() {
+  //fixme
+  //localStorage.clear();
   /*user.delete(pair, ({ err }) => {
     if (err) {
       alert(err);
@@ -26,7 +27,8 @@ function delete_acc() {
     }
   });*/
   resetUsername().then((e) => {
-    console.log;
+    window.alert("deleted account, return to login page.");
+    window.location.reload();
   });
 }
 

@@ -10,9 +10,9 @@ async function signup() {
     if (!ack.pub) {
       alert(ack.err);
     } else {
-      pair = ack.pub;
       console.log(ack.pub);
-      console.log("user created");
+      alert("user created, signing in");
+      login();
     }
   });
 }
