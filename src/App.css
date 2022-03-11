@@ -92,7 +92,7 @@ body {
   border-color: #ccc;
 }
 
-.avatar-received {
+.figure-received {
   float: left;
   margin-right: 20px;
 }
@@ -106,7 +106,7 @@ body {
   background-color: #f5f6f7;
 }
 
-.avatar-sent {
+.figure-sent {
   float: right;
   margin-left: 20px;
 }
