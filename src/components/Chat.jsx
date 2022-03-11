@@ -1,8 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import GUN from "gun";
 import { user, db, getUsername } from "../user";
 import ChatMessage from "./ChatMessage";
 import Login from "./Login";
+
 // key for end-to-end encryption
 const key = require("../secrets.json");
 const sea = require("gun/sea");

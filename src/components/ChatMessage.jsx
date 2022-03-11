@@ -9,7 +9,7 @@ function ChatMessage(props) {
     <div className={`message ${messageClass}`}>
       <figure className={`figure figure-${messageClass}`}>
         <img className="avatar" src={avatar} alt="avatar" />
-        <figcaption class="figure-caption">{message.who}</figcaption>
+        <figcaption className="figure-caption">{message.who}</figcaption>
       </figure>
       <div className={`message-text-${messageClass}`}>
         <p>{message.what}</p>
