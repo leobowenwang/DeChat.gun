@@ -64,7 +64,7 @@ function Chat() {
               ))
             : null}
         </div>
-        <div className="input-group fixed-bottom mb-3">
+        <div className="input-group fixed-bottom w-auto m-lg-3">
           <input
             placeholder="Type a message..."
             className="form-control"

@@ -1,35 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { user, getUsername } from "../user";
+import { user, getUsername, db } from "../user";
 
 var pair = window.sessionStorage.getItem("pair");
 console.log(pair);
-
-async function resetUsername() {
-  await user.get("alias").put(null);
-  return true;
-}
 
 function logout() {
   user.leave();
   console.log("signed out.");
   window.location.reload();
-}
-
-function delete_acc() {
-  //fixme
-  //localStorage.clear();
-  /*user.delete(pair, ({ err }) => {
-    if (err) {
-      alert(err);
-    } else {
-      console.log("account deleted.");
-      //window.location.reload();
-    }
-  });*/
-  resetUsername().then((e) => {
-    window.alert("deleted account, return to login page.");
-    window.location.reload();
-  });
 }
 
 function Header() {
@@ -61,10 +39,6 @@ function Header() {
           />
         </div>
         <div className="form-inline">
-          <button className="btn btn-danger" onClick={delete_acc}>
-            Delete
-          </button>
-          &nbsp;
           <button className="btn btn-warning" onClick={logout}>
             Logout
           </button>
