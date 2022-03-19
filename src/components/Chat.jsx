@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import GUN from "gun";
-import { user, db, getUsername } from "../user";
+import { user, db, dbname, getUsername } from "../user";
 import ChatMessage from "./ChatMessage";
 import Login from "./Login";
 
 // key for end-to-end encryption
 const key = process.env.REACT_APP_KEY;
-const dbname = process.env.REACT_APP_DBNAME;
 const sea = require("gun/sea");
 
 function Chat() {
