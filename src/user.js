@@ -4,7 +4,10 @@ import "gun/sea";
 
 // Database
 export const db = GUN({
-  peers: ["http://localhost:3030/gun"],
+  peers: [
+    `http://${process.env.PUBLIC_URL}:${port}/gun`,
+    `http://localhost:8080/gun`,
+  ],
 });
 // Gun User
 export const user = db.user().recall({ sessionStorage: true });
