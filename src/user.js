@@ -3,7 +3,7 @@ import "gun/sea";
 import 'gun/axe';
 
 // Database
-export const db = GUN(`http://${process.env.PUBLIC_URL}:3030/gun`);
+export const db = GUN(`${process.env.REACT_APP_KEY}/gun`);
 // Gun User
 export const user = db.user().recall({ sessionStorage: true });
 
