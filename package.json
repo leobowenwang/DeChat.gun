@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "go": "concurrently \"node index.js\" \"react-scripts start\"",
+    "go": "concurrently \"node index.js\" \"react-scripts build\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
