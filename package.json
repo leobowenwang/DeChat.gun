@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "go": "concurrently \"node index.js\" \"react-scripts build\"",
+    "relay": "node index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
