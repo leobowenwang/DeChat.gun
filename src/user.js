@@ -1,10 +1,9 @@
 import GUN from "gun";
 import "gun/sea";
-import "gun/axe";
+import 'gun/axe';
 
 // Database
 export const db = GUN(`${process.env.REACT_APP_RELAY}/gun`);
-export const dbname = process.env.REACT_APP_DBNAME;
 // Gun User
 export const user = db.user().recall({ sessionStorage: true });
 
@@ -13,7 +12,7 @@ export async function getUsername() {
   return alias;
 }
 
-db.on(dbname, async (event) => {
+db.on("auth", async (event) => {
   const alias = await user.get("alias");
   console.log(`signed in as ${alias}`);
 });
