@@ -6,6 +6,7 @@ import Login from "./Login";
 
 // key for end-to-end encryption
 const key = process.env.REACT_APP_KEY;
+const dbname = process.env.REACT_APP_DBNAME;
 const sea = require("gun/sea");
 
 function Chat() {
@@ -17,7 +18,7 @@ function Chat() {
     const secret = await sea.encrypt(newMessage, key);
     const message = user.get("all").set({ what: secret });
     const index = new Date().toISOString();
-    db.get("chat").get(index).put(message);
+    db.get(dbname).get(index).put(message);
     setNewMessage("");
   }
 
@@ -28,7 +29,7 @@ function Chat() {
       },
       "-": 1,
     };
-    db.get("chat")
+    db.get(dbname)
       .map(match)
       .once(async (data, id) => {
         if (data) {
