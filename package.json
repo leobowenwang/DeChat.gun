@@ -1,8 +1,9 @@
 {
-  "name": "gun-yee",
+  "name": "DeChat.gun",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "author": "Sebastian Chmel & Leo Bowen Wang",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
