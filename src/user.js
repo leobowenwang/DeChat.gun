@@ -5,8 +5,7 @@ import "gun/sea";
 // Database
 export const db = GUN({
   peers: [
-    `http://${process.env.PUBLIC_URL}:${process.env.port}/gun`,
-    `http://localhost:8080/gun`,
+    `https://${process.env.PUBLIC_URL}:443/gun`
   ],
 });
 // Gun User
