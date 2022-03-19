@@ -6,7 +6,7 @@ const port = 3030;
 app.use(GUN.serve);
 
 const server = app.listen(process.env.port || port, () => {
-  console.log(`Example app listening at http://${process.env.PUBLIC_URL}:${port}`);
+  console.log(`Example app listening at http://${process.env.PUBLIC_URL}:${process.env.port}`);
 });
 
 GUN({ web: server });
