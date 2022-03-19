@@ -5,7 +5,7 @@ import ChatMessage from "./ChatMessage";
 import Login from "./Login";
 
 // key for end-to-end encryption
-const key = require("../secrets.json");
+const key = process.env.REACT_APP_KEY;
 const sea = require("gun/sea");
 
 function Chat() {
