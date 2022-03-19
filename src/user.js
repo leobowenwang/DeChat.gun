@@ -3,11 +3,8 @@ import "gun/sea";
 //import 'gun/axe';
 
 // Database
-export const db = GUN({
-  peers: [
-    `https://${process.env.PUBLIC_URL}:443/gun`
-  ],
-});
+export const db = GUN();
+
 // Gun User
 export const user = db.user().recall({ sessionStorage: true });
 
