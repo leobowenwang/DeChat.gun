@@ -13,6 +13,7 @@ function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
   const [username, setUsername] = useState("");
+  const buttom = React.useRef();
 
   async function sendMessage() {
     const secret = await sea.encrypt(newMessage, key);
@@ -49,6 +50,7 @@ function Chat() {
         }
       });
   }
+  buttom.current?.scrollIntoView({ behavior: "smooth" });
   if (user.is) {
     useEffect(() => {
       loadMessages();
@@ -64,6 +66,7 @@ function Chat() {
                 <ChatMessage key={key} message={message} username={username} />
               ))
             : null}
+          <span ref={buttom}/>
         </div>
         <div className="input-group fixed-bottom w-auto m-lg-3">
           <input
