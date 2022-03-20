@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { user, getUsername, db } from "../user";
+import { user, getUsername } from "../user";
 
 var pair = window.sessionStorage.getItem("pair");
 console.log(pair);
@@ -20,7 +20,7 @@ function Header() {
       });
     }, []);
     return (
-      <div className="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+      <div className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <img
           src={`logo.png`}
           id="logo"

@@ -113,6 +113,10 @@ body {
   float: left;
 }
 
+#logoutbtn {
+  margin-right: 1rem;
+}
+
 main {
   padding: 10px;
   height: 90vh;
