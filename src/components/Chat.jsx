@@ -69,6 +69,7 @@ function Chat() {
           <input
             placeholder="Type a message..."
             className="form-control"
+            value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
             maxLength="100"
             onKeyPress={(event) => {
