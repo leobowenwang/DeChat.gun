@@ -71,6 +71,11 @@ function Chat() {
             className="form-control"
             onChange={(e) => setNewMessage(e.target.value)}
             maxLength="100"
+            onKeyPress={(event) => {
+              if (event.key === "Enter") {
+                sendMessage();
+              }
+            }}
           />
           <button
             className="btn btn-primary"
