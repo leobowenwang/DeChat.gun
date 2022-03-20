@@ -112,3 +112,12 @@ body {
 .time-sent {
   float: left;
 }
+
+main {
+  padding: 10px;
+  height: 90vh;
+  margin: 5vh 0 5vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}

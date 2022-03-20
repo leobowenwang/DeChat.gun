@@ -20,7 +20,7 @@ function Header() {
       });
     }, []);
     return (
-      <div className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
         <img
           src={`logo.png`}
           id="logo"

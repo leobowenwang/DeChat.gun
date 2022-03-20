@@ -60,14 +60,20 @@ function Chat() {
     }, []);
     return (
       <div className="App">
-        <div className="container card">
-          {messages.length != 0
-            ? messages.map((message, key) => (
-                <ChatMessage key={key} message={message} username={username} />
-              ))
-            : null}
-          <span ref={buttom}/>
-        </div>
+        <main>
+          <div className="container card">
+            {messages.length != 0
+              ? messages.map((message, key) => (
+                  <ChatMessage
+                    key={key}
+                    message={message}
+                    username={username}
+                  />
+                ))
+              : null}
+            <span ref={buttom} />
+          </div>
+        </main>
         <div className="input-group fixed-bottom w-auto m-lg-3">
           <input
             placeholder="Type a message..."
