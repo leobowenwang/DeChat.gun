@@ -37,7 +37,9 @@ function Header() {
             alt="avatar"
           />
         </div>
-        <button type="button" class="btn btn-secondary " disabled>Room: {localStorage.getItem("room")}</button>
+        <button type="button" class="btn btn-secondary " disabled>
+          Room: {localStorage.getItem("room")}
+        </button>
         <div className="form-inline">
           <button className="btn btn-warning" onClick={logout}>
             Logout
