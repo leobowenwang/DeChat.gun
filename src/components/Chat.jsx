@@ -20,8 +20,7 @@ function Chat() {
     const secret = await sea.encrypt(newMessage, key);
     const message = user.get("all").set({ what: secret });
     const index = new Date().toISOString();
-    db.get(roomID
-    ).get(index).put(message);
+    db.get(roomID).get(index).put(message);
     setNewMessage("");
   }
 
@@ -32,8 +31,7 @@ function Chat() {
       },
       "-": 1,
     };
-    db.get(roomID
-    )
+    db.get(roomID)
       .map(match)
       .once(async (data, id) => {
         if (data) {

@@ -27,7 +27,6 @@ function Header() {
           className="img-fluid"
           alt="DeChat.gun"
         />
-
         <div className="mx-auto order-0">
           <span>
             Welcome <strong>{username}</strong> &nbsp;
@@ -38,6 +37,7 @@ function Header() {
             alt="avatar"
           />
         </div>
+        <button type="button" class="btn btn-secondary " disabled>Room: {localStorage.getItem("room")}</button>
         <div className="form-inline">
           <button className="btn btn-warning" onClick={logout}>
             Logout

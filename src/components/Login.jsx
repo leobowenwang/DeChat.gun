@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Chat from "./Chat";
 import { user } from "../user";
 
@@ -41,6 +41,7 @@ function Login() {
 
   function setRoomID() {
     localStorage.setItem("room", room);
+    alert("Set room to " + room);
   }
 
   if (user.is) {
@@ -81,7 +82,7 @@ function Login() {
           className="form-control"
           name="room"
           value={room}
-          onChange={e => setRoom(e.target.value)}
+          onChange={(e) => setRoom(e.target.value)}
         />
         <button className="btn btn-primary" onClick={setRoomID}>
           Set
