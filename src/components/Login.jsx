@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Chat from "./Chat";
 import { user } from "../user";
 
@@ -27,7 +27,18 @@ function login() {
   });
 }
 
+function getRoom() {
+  return localStorage.getItem("room");
+}
+
 function Login() {
+  const [room, setRoom] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("room", room);
+    console.log(room);
+  }, [room]);
+  
   if (user.is) {
     return (
       <div className="App">
@@ -59,6 +70,19 @@ function Login() {
       <button className="btn btn-success" onClick={signup}>
         Sign Up
       </button>
+      <hr />
+      <div className="input-group">
+        <input
+          placeholder="Room ID"
+          className="form-control"
+          name="room"
+          value={room}
+          onChange={e => setRoom(e.target.value)}
+        />
+        <button type="submit" className="btn btn-primary" >
+          Set
+        </button>
+      </div>
     </div>
   );
 }
