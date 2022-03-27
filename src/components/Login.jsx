@@ -18,13 +18,17 @@ async function signup() {
 }
 
 function login() {
-  user.auth(username, password, ({ err }) => {
-    if (err) {
-      alert(err);
-    } else {
-      window.location.reload();
-    }
-  });
+  if (getRoom() === null) {
+    alert("Please set room first");
+  } else {
+    user.auth(username, password, ({ err }) => {
+      if (err) {
+        alert(err);
+      } else {
+        window.location.reload();
+      }
+    });
+  }
 }
 
 export function getRoom() {
