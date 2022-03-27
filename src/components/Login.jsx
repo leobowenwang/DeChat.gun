@@ -27,7 +27,7 @@ function login() {
   });
 }
 
-function getRoom() {
+export function getRoom() {
   return localStorage.getItem("room");
 }
 
@@ -35,10 +35,14 @@ function Login() {
   const [room, setRoom] = useState("");
 
   useEffect(() => {
-    localStorage.setItem("room", room);
+    let room = getRoom();
     console.log(room);
-  }, [room]);
-  
+  }, []);
+
+  function setRoomID() {
+    localStorage.setItem("room", room);
+  }
+
   if (user.is) {
     return (
       <div className="App">
@@ -79,7 +83,7 @@ function Login() {
           value={room}
           onChange={e => setRoom(e.target.value)}
         />
-        <button type="submit" className="btn btn-primary" >
+        <button className="btn btn-primary" onClick={setRoomID}>
           Set
         </button>
       </div>

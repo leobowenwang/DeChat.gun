@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import GUN from "gun";
 import { user, db, getUsername } from "../user";
 import ChatMessage from "./ChatMessage";
+import { getRoom } from "./Login";
 import Login from "./Login";
 
 // key for end-to-end encryption
 const key = process.env.REACT_APP_KEY;
-const dbname = process.env.REACT_APP_DBNAME;
+const roomID = getRoom();
 const sea = require("gun/sea");
 
 function Chat() {
@@ -19,7 +20,8 @@ function Chat() {
     const secret = await sea.encrypt(newMessage, key);
     const message = user.get("all").set({ what: secret });
     const index = new Date().toISOString();
-    db.get(dbname).get(index).put(message);
+    db.get(roomID
+    ).get(index).put(message);
     setNewMessage("");
   }
 
@@ -30,7 +32,8 @@ function Chat() {
       },
       "-": 1,
     };
-    db.get(dbname)
+    db.get(roomID
+    )
       .map(match)
       .once(async (data, id) => {
         if (data) {
