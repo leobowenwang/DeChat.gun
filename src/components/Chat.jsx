@@ -17,17 +17,14 @@ function Chat() {
   const buttom = React.useRef();
 
   async function sendMessage() {
-    const start = performance.now()
     const secret = await sea.encrypt(newMessage, key);
     const message = user.get("all").set({ what: secret });
     const index = new Date().toISOString();
     db.get(roomID).get(index).put(message);
     setNewMessage("");
-    const stop = performance.now()
-    console.log(`sendMessage(): ${stop - start} ms`);
   }
 
-  async function loadMessages() {
+  async function loadMessage() {
     const start = performance.now()
     var match = {
       ".": {
@@ -60,7 +57,7 @@ function Chat() {
   buttom.current?.scrollIntoView({ behavior: "smooth" });
   if (user.is) {
     useEffect(() => {
-      loadMessages();
+      loadMessage();
       getUsername().then((username) => {
         setUsername(username);
       });
