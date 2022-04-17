@@ -21,29 +21,44 @@ function Header() {
     }, []);
     return (
       <div className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <img
-          src={`logo.png`}
-          id="logo"
-          className="img-fluid"
-          alt="DeChat.gun"
-        />
-        <div className="mx-auto order-0">
-          <span>
-            Welcome <strong>{username}</strong> &nbsp;
-          </span>
+        <a href="/">
           <img
-            src={`https://avatars.dicebear.com/api/initials/${username}.svg`}
-            className="avatar"
-            alt="avatar"
+            src={`logo.png`}
+            id="logo"
+            className="img-fluid"
+            alt="DeChat.gun"
           />
-        </div>
-        <button type="button" className="btn btn-secondary " disabled>
-          Room: {localStorage.getItem("room")}
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="form-inline">
-          <button className="btn btn-warning" onClick={logout}>
-            Logout
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="mx-auto order-0">
+            <span>
+              Welcome <strong>{username}</strong> &nbsp;
+            </span>
+            <img
+              src={`https://avatars.dicebear.com/api/initials/${username}.svg`}
+              className="avatar"
+              alt="avatar"
+            />
+          </div>
+          <button type="button" className="btn btn-secondary " disabled>
+            Room: {localStorage.getItem("room")}
           </button>
+          <div className="form-inline" id="logoutbtn">
+            <button className="btn btn-warning" onClick={logout}>
+              Logout
+            </button>
+          </div>
         </div>
       </div>
     );

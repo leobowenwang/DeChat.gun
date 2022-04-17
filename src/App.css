@@ -118,7 +118,7 @@ body {
 }
 
 main {
-  padding: 10px;
+  padding: 40px 10px 40px;
   height: 90vh;
   margin: 5vh 0 5vh;
   overflow-y: scroll;
