@@ -7,6 +7,7 @@ console.log(pair);
 function logout() {
   user.leave();
   console.log("signed out.");
+  localStorage.removeItem("gun/");
   window.location.reload();
 }
 
