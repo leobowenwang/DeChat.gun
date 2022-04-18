@@ -12,7 +12,7 @@ export async function getUsername() {
   return alias;
 }
 
-db.on("auth", async (event) => {
+db.on("auth", async () => {
   const alias = await user.get("alias");
   console.log(`signed in as ${alias}`);
 });
