@@ -10,7 +10,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@peculiar/webcrypto": "1.4.0",
+    "@peculiar/webcrypto": "1.4.1",
     "bootstrap": "5.2.2",
     "gun": "0.2020.1238",
     "react": "18.2.0",
