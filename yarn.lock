@@ -4415,10 +4415,10 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4, 
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.9.tgz#041b05df45755e587a24942279b9d113146e1c96"
   integrity sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==
 
-gun@0.2020.1238:
-  version "0.2020.1238"
-  resolved "https://registry.yarnpkg.com/gun/-/gun-0.2020.1238.tgz#d80ff692dcec769edbfc716909d9a80a6285b9e3"
-  integrity sha512-8rKaAN74o3RTc2/a3CZca3Rx6rWnYpB1nS7mCtWH+LC7wvt2tzPR1yfRCq61haoR/Vtbl45qdq8iyoz9lAY8mg==
+gun@0.2020.1239:
+  version "0.2020.1239"
+  resolved "https://registry.yarnpkg.com/gun/-/gun-0.2020.1239.tgz#5810563fa714ffb67122c15495d3308e13392105"
+  integrity sha512-e4BsRL4P6oLT1m7G+0H8VhhdfFEHhcPc5tOnmgTO6q9ZQrT+Q0B5XKrpAV3NcuLq3SpnOevlz6+Ul5CVaavcXQ==
   dependencies:
     ws "^7.2.1"
   optionalDependencies:
