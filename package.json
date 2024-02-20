@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@peculiar/webcrypto": "1.4.5",
-    "bootstrap": "5.3.2",
+    "bootstrap": "5.3.3",
     "gun": "0.2020.1239",
     "react": "18.2.0",
     "react-dom": "18.2.0",
