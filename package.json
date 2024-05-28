@@ -10,11 +10,11 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@peculiar/webcrypto": "1.4.6",
+    "@peculiar/webcrypto": "1.5.0",
     "bootstrap": "5.3.3",
-    "gun": "0.2020.1239",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "gun": "0.2020.1240",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-scripts": "5.0.1"
   },
   "browserslist": {
